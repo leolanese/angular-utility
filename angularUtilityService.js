@@ -72,6 +72,17 @@
           */
           
           
+          // Concatenating 2 or 3 arrays
+          function concats = function(arr1, arr2, arr3){
+            if (arr3 === undefined || arr3 === null) {
+              var arr = arr1.concat(arr2);
+            } else {
+              var arr = arr1.concat(arr2, arr3);
+            }
+              console.log(arr);           
+              return arr;            
+          }
+          
       }
 
 })();
