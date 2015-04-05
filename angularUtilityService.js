@@ -5,13 +5,13 @@
 
       .module('myApp')
 
-      .factory('toggleNavService'), toggleNavService);
+      .factory('angularUtilityService'), angularUtilityService);
 
       /* @ngInject */
       angularUtilityService.$inject = ['$location', '$scope'];
 
       ////
-      function toggleNavService($location, $scope){
+      function angularUtilityService($location, $scope){
       
          // toggle
          function.toggle = function(){
