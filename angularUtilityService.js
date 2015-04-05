@@ -36,7 +36,7 @@
           
           // JSON Objects counter
           // JsonObject = JSON Object expected
-          function countJSONObjects(){
+          function countJSONObjects(JsonObject){
             var count = 0;
             for( var x in JsonObject ) 
                 if(JsonObject.hasOwnProperty(x)) {
@@ -45,7 +45,15 @@
             console.log(count++);
           }
           
+          // JSON parse
+          // JsonObject = JSON Object expected
+          function JSONParse(JsonObject){
+            var jsonObject = JSON.parse(JsonObject);
+            console.log(jsonObject)
+          }
+          
           //
+          
           
       }
 
