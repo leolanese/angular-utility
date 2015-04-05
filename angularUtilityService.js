@@ -34,8 +34,19 @@
             return Object.keys(obj).map(function (key) { return obj[key]; });
           }
           
+          // JSON Objects counter
+          // JsonObject = JSON Object expected
+          function countJSONObjects(){
+            var count = 0;
+            for( var x in JsonObject ) 
+                if(JsonObject.hasOwnProperty(x)) {
+                   count++
+                }
+            console.log(count++);
+          }
+          
           //
-
+          
       }
 
 })();
