@@ -52,7 +52,24 @@
             console.log(jsonObject)
           }
           
-          //
+          // sort an array of objects by number or letter using native function sort()
+          function sortBy = function(field, reverse, primer){
+              var key = primer ? 
+                 function(x) {return primer(x[field])} : 
+                 function(x) {return x[field]};
+              reverse = !reverse ? 1 : -1;
+          
+              return function (a, b) {
+                 return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+              } 
+          }         
+          /*
+          // Sort by JSON n_key high to low
+          homes.sort( sort_by('n_key', true, parseInt) );
+          
+          // Sort by JSON n_key, case-insensitive, A-Z
+          homes.sort( sort_by('n_key', false, function(a){ return a.toUpperCase() }) );
+          */
           
           
       }
