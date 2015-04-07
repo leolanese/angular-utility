@@ -84,7 +84,7 @@
           }
           
           // Converting Array to JSON
-          function convertJSONtoArray(){
+          function convertJSONtoArray(jo){
             var arr = Object.keys(jo).map(function(k) { return jo[k] });
             console.log(arr)
             return arr;
