@@ -93,6 +93,15 @@
           var jo = {"0":"1","1":"2","2":"3","3":"4"};
           */
           
+          // test Array to validate the function
+          var num = 5;
+          function isBiggerThan(element, index, array){
+            return element > num;
+          }
+          /*
+          console.log( [2, 5, 8, 1, 4].some( isBiggerThan )); //true
+          */
+          
       }
 
 })();
