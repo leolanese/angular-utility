@@ -12,7 +12,23 @@
 
       ////
       function angularUtilityService($location, $scope){
+        
+        
+         // 1
+         var service = service || {};
       
+         service.helpers = {
+           
+          isNotString: function(str) {
+            return (typeof str !== "string");
+          }
+          
+         };
+         
+         return service;
+      
+      
+         // 2 
          // toggle
          function toggle(){
             $scope.show = !$scope.show;
