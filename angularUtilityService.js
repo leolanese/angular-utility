@@ -14,12 +14,12 @@
       function angularUtilityService($location, $scope){
       
          // toggle
-         function.toggle = function(){
+         function toggle(){
             $scope.show = !$scope.show;
          }
          
          // redirection
-         function.redirection = function(){
+         function redirection(){
             if ($location.$$host === 'localhost') {
              user = {
               username: 'nnn',
@@ -53,7 +53,7 @@
           }
           
           // sort an array of objects by number or letter using native function sort()
-          function sortBy = function(field, reverse, primer){
+          function sortBy(field, reverse, primer){
               var key = primer ? 
                  function(x) {return primer(x[field])} : 
                  function(x) {return x[field]};
@@ -73,7 +73,7 @@
           
           
           // Concatenating 2 or 3 arrays
-          function concats = function(arr1, arr2, arr3){
+          function concats(arr1, arr2, arr3){
             if (arr3 === undefined || arr3 === null) {
               var arr = arr1.concat(arr2);
             } else {
