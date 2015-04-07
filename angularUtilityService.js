@@ -83,6 +83,16 @@
               return arr;            
           }
           
+          // Converting Array to JSON
+          function convertJSONtoArray(){
+            var arr = Object.keys(jo).map(function(k) { return jo[k] });
+            console.log(arr)
+            return arr;
+          }
+          /*
+          var jo = {"0":"1","1":"2","2":"3","3":"4"};
+          */
+          
       }
 
 })();
