@@ -102,6 +102,16 @@
           console.log( [2, 5, 8, 1, 4].some( isBiggerThan )); //true
           */
           
+          //  method tests whether all elements in the typed array pass the test
+          function isBigEnough(element, index, array) {
+            return element >= 10;
+          }
+          /*
+          console.log( [12, 54, 18, 130, 44].every(isBigEnough) ); 
+          */
+          
+          
+          
       }
 
 })();
