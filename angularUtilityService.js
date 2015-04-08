@@ -1,4 +1,4 @@
-var FOO2 = (function(){
+;(function(){
   'use strict';
 
     angular
@@ -13,7 +13,7 @@ var FOO2 = (function(){
       ////
       function angularUtilityService($location, $scope){
         
-        
+/*        
          // 1: Augmentation pattern
          (typeof(service) === "undefined")? service = {}: '';
       
@@ -26,7 +26,7 @@ var FOO2 = (function(){
          };
          
          return service;
-      
+  */    
       
          // 2: revealing module pattern
          // toggle
@@ -130,4 +130,4 @@ var FOO2 = (function(){
           
       }
 
-}(service || {}));
+}();
