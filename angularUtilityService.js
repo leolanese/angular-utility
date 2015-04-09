@@ -95,14 +95,12 @@
             } else {
               var arr = arr1.concat(arr2, arr3);
             }
-              console.log(arr);           
               return arr;            
           }
           
           // Converting Array to JSON
           function convertJSONtoArray(jo){
             var arr = Object.keys(jo).map(function(k) { return jo[k] });
-            console.log(arr)
             return arr;
           }
           /*
@@ -126,7 +124,14 @@
           console.log( [12, 54, 18, 130, 44].every(isBigEnough) ); 
           */
           
-          
+          // return JSON keys
+          function getKeys(jsonObj){
+            return Object.keys(jsonObj);
+          }
+          /*
+            var jsonObj = {"key1":"value1","key2":"value2"};
+            getKeys(jsonObj);
+          */
           
       }
 
