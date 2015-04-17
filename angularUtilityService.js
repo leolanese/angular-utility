@@ -125,7 +125,7 @@
           */
           
           // Remove duplicate items from an array
-          var removeDuplicate = function(base) {
+          function removeDuplicate(base) {
             var fooArr = [],
                 fooArr2 = [],
                 found, x, y;
