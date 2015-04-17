@@ -26,7 +26,7 @@
          };
          
          return service;
-  */    
+*/    
       
          // 2: revealing module pattern
          // toggle
@@ -123,6 +123,35 @@
           /*
           console.log( [12, 54, 18, 130, 44].every(isBigEnough) ); 
           */
+          
+          // Remove duplicate items from an array
+          var removeDuplicate = function(base) {
+            var fooArr = [],
+                fooArr2 = [],
+                found, x, y;
+        
+            for (x = 0, origLen = base.length ; x < origLen; x++) {
+                found = '';
+                for (y = 0; y < fooArr.length; y++) {
+                    if (base[x] === fooArr[y]) {
+                        fooArr2.push(base[x]);
+                        console.log("repeated:", fooArr2);
+                        found = 1;
+                        break;
+                    }
+                }
+                if (!found) {
+                    fooArr.push(base[x]);
+                }
+            }
+            console.log("repeated:" + fooArr2);
+            return fooArr2;
+        }
+        /*
+        usage:
+        var   arr = [0, 1, 2, 2, 3, 3, 4, 20, 21, 22, 24],
+        arrUnique = removeDuplicate(arr);
+        */
           
           // return JSON keys
           function getKeys(jsonObj){
