@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-
+  
   myApp
 
     .directive('touppercase', function() {
@@ -14,8 +14,20 @@
           element.css('text-transform','uppercase');
         }
       };
-    });
+    })
     
-    // next Directive
+    .directive('tolowercase', function() {
+      return {
+        require: '?ngModel',
+        replace: true,
+        link: function(scope, element, attrs, modelCtrl) {
+          modelCtrl.$parsers.push(function(n) {
+            return n ? n.toLowerCase():'';
+          });
+          element.css('text-transform','lowercase');
+        }
+      };
+
+    });
 
 })();
