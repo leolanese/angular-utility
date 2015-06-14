@@ -8,49 +8,56 @@
       .factory('angularUtilityService'), angularUtilityService);
 
       /* @ngInject */
-      angularUtilityService.$inject = ['$location', '$scope'];
-
-      ////
       function angularUtilityService($location, $scope){
         
-        isMsie: function() {
+        /*jshint validthis: true */
+        var vm = this;
+        vm.angularUtilityService = angularUtilityService;
+        
+        var userService = {
+          setUser: setUser,
+          getUsername: getUsername,
+          getPassword: getPassword
+        };
+            
+        return userService;
+
+       ////////////
+            
+        function isMsie() {
             var match = /(msie) ([\w.]+)/i.exec(navigator.userAgent);
             return match ? parseInt(match[2], 10) : false;
         },
         
-        isBlankString: function(str) {
+        function isBlankString(str) {
             return !str || /^\s*$/.test(str);
         },
         
-        escapeRegExChars: function(str) {
+        function escapeRegExChars(str) {
             return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
         },
         
-        isString: function(obj) {
+        function isString(obj) {
             return typeof obj === "string";
         },
         
-        isNumber: function(obj) {
+        function isNumber(obj) {
             return typeof obj === "number";
         },
-        
-        isUndefined: function(obj) {
-            return typeof obj === "undefined";
-        },
-    
-        isUndefined: function(obj) {
+
+        function isUndefined(obj) {
             return typeof obj === "undefined";
         },
         
-        isElement: function(obj) {
+        function isElement(obj) {
             return !!(obj && obj.nodeType === 1);
         },
         
-        isJQuery: function(obj) {
+        function isJQuery(obj) {
             return obj instanceof $;
         },
         
-        debounce: function(func, wait, immediate) {
+        function debounce(func, wait, immediate) {
             var timeout, result;
             return function() {
                 var context = this, args = arguments, later, callNow;
@@ -70,15 +77,15 @@
             };
         }
         
-        toStr: function toStr(s) {
+        function toStr(s) {
             return _.isUndefined(s) || s === null ? "" : s + "";
         },
         
-        stringify: function(val) {
+        function stringify(val) {
             return _.isString(val) ? val : JSON.stringify(val);
         },
         
-        clone: function(obj) {
+        function clone(obj) {
             return $.extend(true, {}, obj);
         },
         
