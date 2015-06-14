@@ -13,21 +13,51 @@
       ////
       function angularUtilityService($location, $scope){
         
-/*        
-         // 1: Augmentation pattern
-         (typeof(service) === "undefined")? service = {}: '';
-      
-         service.helpers = {
-           
-          isNotString: function(str) {
-            return (typeof str !== "string");
-          }
-          
-         };
-         
-         return service;
-*/    
-      
+        isMsie: function() {
+            var match = /(msie) ([\w.]+)/i.exec(navigator.userAgent);
+            return match ? parseInt(match[2], 10) : false;
+        },
+        
+        isBlankString: function(str) {
+            return !str || /^\s*$/.test(str);
+        },
+        
+        escapeRegExChars: function(str) {
+            return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+        },
+        
+        isString: function(obj) {
+            return typeof obj === "string";
+        },
+        
+        isNumber: function(obj) {
+            return typeof obj === "number";
+        },
+        
+        isUndefined: function(obj) {
+            return typeof obj === "undefined";
+        },
+    
+        isUndefined: function(obj) {
+            return typeof obj === "undefined";
+        },
+        
+        isElement: function(obj) {
+            return !!(obj && obj.nodeType === 1);
+        },
+        
+        isJQuery: function(obj) {
+            return obj instanceof $;
+        },
+        
+        toStr: function toStr(s) {
+            return _.isUndefined(s) || s === null ? "" : s + "";
+        },
+        
+        clone: function(obj) {
+            return $.extend(true, {}, obj);
+        },
+        
          // 2: revealing module pattern
          // toggle
          function toggle(){
