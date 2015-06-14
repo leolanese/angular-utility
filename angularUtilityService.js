@@ -1,4 +1,4 @@
-;(function(){
+(function(){
   'use strict';
 
     angular
@@ -50,8 +50,32 @@
             return obj instanceof $;
         },
         
+        debounce: function(func, wait, immediate) {
+            var timeout, result;
+            return function() {
+                var context = this, args = arguments, later, callNow;
+                later = function() {
+                    timeout = null;
+                    if (!immediate) {
+                        result = func.apply(context, args);
+                    }
+                };
+                callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) {
+                    result = func.apply(context, args);
+                }
+                return result;
+            };
+        }
+        
         toStr: function toStr(s) {
             return _.isUndefined(s) || s === null ? "" : s + "";
+        },
+        
+        stringify: function(val) {
+            return _.isString(val) ? val : JSON.stringify(val);
         },
         
         clone: function(obj) {
@@ -183,14 +207,14 @@
         arrUnique = removeDuplicate(arr);
         */
           
-          // return JSON keys
-          function getKeys(jsonObj){
-            return Object.keys(jsonObj);
-          }
-          /*
-            var jsonObj = {"key1":"value1","key2":"value2"};
-            getKeys(jsonObj);
-          */
+        // return JSON keys
+        function getKeys(jsonObj){
+          return Object.keys(jsonObj);
+        }
+        /*
+          var jsonObj = {"key1":"value1","key2":"value2"};
+          getKeys(jsonObj);
+        */
           
       }
 
