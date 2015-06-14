@@ -12,12 +12,56 @@
         
         /*jshint validthis: true */
         var vm = this;
-        vm.angularUtilityService = angularUtilityService;
+      
+        vm.isMsie = isMsie;
+        vm.isBlankString = isBlankString;
+        vm.escapeRegExChars = escapeRegExChars;
+        vm.isString = isString;
+        vm.isNumber = isNumber;
+        vm.isUndefined = isUndefined;
+        vm.isElement = isElement;
+        vm.isJQuery = isJQuery;
+        vm.debounce = debounce;
+        vm.stringify = stringify;
+        vm.clone = clone;
+        vm.toggle = toggle;
+        vm.redirection = redirection;
+        vm.valuesToArray = valuesToArray;
+        vm.countJSONObjects = countJSONObjects;
+        vm.JSONParse = JSONParse;
+        vm.sortBy = sortBy;
+        vm.concats = concats;
+        vm.convertJSONtoArray = convertJSONtoArray;
+        vm.isBiggerThan = isBiggerThan;
+        vm.isBigEnough = isBigEnough;
+        vm.removeDuplicate = removeDuplicate;
+        vm.getKeys = getKeys;
         
-        var userService = {
-          setUser: setUser,
-          getUsername: getUsername,
-          getPassword: getPassword
+        /* NOTE: I'm making all methods and properties public and private. Take those that we need and make the rest privates */
+        var utilityService = {
+          isMsie : isMsie;
+          isBlankString : isBlankString;
+          escapeRegExChars : escapeRegExChars;
+          isString : isString;
+          isNumber : isNumber;
+          isUndefined : isUndefined;
+          isElement : isElement;
+          isJQuery : isJQuery;
+          debounce : debounce;
+          stringify : stringify;
+          clone : clone;
+          toggle : toggle;
+          redirection : redirection;
+          valuesToArray : valuesToArray;
+          countJSONObjects : countJSONObjects;
+          JSONParse : JSONParse;
+          sortBy : sortBy;
+          concats : concats;
+          convertJSONtoArray : convertJSONtoArray;
+          isBiggerThan : isBiggerThan;
+          isBigEnough : isBigEnough;
+          removeDuplicate : removeDuplicate;
+          getKeys : getKeys;
         };
             
         return userService;
