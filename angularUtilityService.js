@@ -10,6 +10,8 @@
       /* @ngInject */
       function angularUtilityService($location, $scope){
         
+        var controllername = "angularUtilityService";
+        
         /*jshint validthis: true */
         var vm = this;
       
