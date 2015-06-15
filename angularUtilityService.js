@@ -268,7 +268,81 @@
           var jsonObj = {"key1":"value1","key2":"value2"};
           getKeys(jsonObj);
         */
-          
-      }
+        
+        /*
+        Borrowed from jQuery, and adapted to AJS environment
+        */
+        var isPlainObject = function( obj ) {
+        		// Not plain objects:
+        		// - Any object or value whose internal [[Class]] property is not "[object Object]"
+        		// - DOM nodes
+        		// - window
+        		if ( jQuery.type( obj ) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
+        			return false;
+        		}
+                hasOwn = ({}).hasOwnProperty;
+        		if ( obj.constructor &&
+        				!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
+        			return false;
+        		}
+        
+        		// If the function hasn't returned already, we're confident that
+        		// |obj| is a plain object, created by {} or constructed with new Object
+        		return true;
+        	}
+          // var n = Object.create(null);
+          // console.log(isPlainObject(n))
+       }
+       
+        var isNumeric = function( obj ) {
+            return !jQuery.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0;
+        }
+        /*
+        var n = 3;
+        console.log(isNumeric(n))
+        */
+        
+        
+        isArray =  Array.isArray;
+        /*
+        var n = new Array();
+        console.log(isArray(n))
+        */
+        
+        
+        var isEmptyObject = function( obj ) {
+      		var name;
+      		for ( name in obj ) {
+      			return false;
+      		}
+      		return true;
+      	}
+        /*
+        var n = new Array('1','2');
+        console.log(isEmptyObject(n));
+        */
+
+
+        var merge = function( first, second ) {
+        		var len = +second.length,
+        			j = 0,
+        			i = first.length;
+        
+        		for ( ; j < len; j++ ) {
+        			first[ i++ ] = second[ j ];
+        		}
+        
+        		first.length = i;
+        
+        		return first;
+        	}
+        /*
+        var a = new Array('1','2');
+        var o = Array.of('leo','lanese');
+        console.log(merge(a,o));
+        */
+        
+        
+        
 
 }();
