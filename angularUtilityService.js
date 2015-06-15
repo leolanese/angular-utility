@@ -103,32 +103,43 @@
             return obj instanceof $;
         },
         
-        /* borrowed from davidwalsh.name */
-        // Returns a function, that, as long as it continues to be invoked, will not
-        // be triggered. The function will be called after it stops being called for
-        // N milliseconds. If `immediate` is passed, trigger the function on the
-        // leading edge, instead of the trailing.
-        function debounce(func, wait, immediate) {
-        	var timeout;
-        	return function() {
-        		var context = this, args = arguments;
-        		var later = function() {
-        			timeout = null;
-        			if (!immediate) func.apply(context, args);
-        		};
-        		var callNow = immediate && !timeout;
-        		clearTimeout(timeout);
-        		timeout = setTimeout(later, wait);
-        		if (callNow) func.apply(context, args);
-        	};
-        };
+        /* borrowed from @rhysbrettbowen */
+        var debounce = function(func, wait) {
+        	// we need to save these in the closure
+        	var timeout, args, context, timestamp;
         
-        /* Usage
-        var myEfficientFn = debounce(function() {
-        	// All the taxing stuff you do
-        }, 250);
-        window.addEventListener('resize', myEfficientFn);
-        */
+        	return function() {
+        
+        		// save details of latest call
+        		context = this;
+        		args = [].slice.call(arguments, 0);
+        		timestamp = new Date();
+        
+        		// this is where the magic happens
+        		var later = function() {
+        
+        			// how long ago was the last call
+        			var last = (new Date()) - timestamp;
+        
+        			// if the latest call was less that the wait period ago
+        			// then we reset the timeout to wait for the difference
+        			if (last < wait) {
+        				timeout = setTimeout(later, wait - last);
+        
+        			// or if not we can null out the timer and run the latest
+        			} else {
+        				timeout = null;
+        				func.apply(context, args);
+        			}
+        		};
+        
+        		// we only need to set the timer now if one isn't already running
+        		if (!timeout) {
+        			timeout = setTimeout(later, wait);
+        		}
+        	}
+        };
+
         
         // The once function ensures a given function can only be called once, thus prevent duplicate initialization
         function once(fn, context) { 
@@ -143,7 +154,6 @@
         		return result;
         	};
         }
-        
         // Usage
         /*
         var canOnlyFireOnce = once(function() {
