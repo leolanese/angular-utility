@@ -400,7 +400,23 @@
         console.log(merge(a,o));
         */
         
-        
+        // Search for a specified value within an array and return its index (or -1 if not found).     
+        Array.prototype.contains = function(obj) {
+            var i = this.length;
+            while (i--) {
+                if (this[i] === obj) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        /*
+        var a = [ 'foo', 'bar' ];
+        console.log( a.contains('foo') ) 
+        console.log( a.contains('fox') ) 
+        console.log( [1, 2, 3].contains(2) ); // => true
+        console.log( [1, 2, 3].contains('2') ); // => false
+        */
         
 
 }();
