@@ -443,5 +443,15 @@
         var jsonString = JSON.stringify(foo, replacer); // {"week":45,"month":7}.
         */
         
+        // Remove a JSON attribute
+        var deleteKeyJSON =  function(json, key){
+          delete myObj.test.key1;
+        }
+        /*
+        var myObj = {'test' : {'key1' : 'value', 'key2': 'value'}};
+        var keyToDelete = "key1";
+        
+        deleteKeyJSON(myObj, keyToDelete);
+        */
 
 }();
