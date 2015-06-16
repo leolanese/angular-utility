@@ -418,5 +418,30 @@
         console.log( [1, 2, 3].contains('2') ); // => false
         */
         
+        var jsonSize = function( obj ) {
+          return Object.keys(obj).length || null;
+        }
+        /*
+        var obj = {
+          foo: 'foo',
+          toJSON: function() {
+            return 'bar';
+          }
+        };
+        jsonSize(obj);
+        */
+        
+        /* borrowed from developer.mozilla.org */
+        var replacer = function(key, value) {
+          if (typeof value === "string") {
+            return undefined;
+          }
+          return value;
+        }
+        /*
+        var foo = {foundation: "Mozilla", model: "box", week: 45, transport: "car", month: 7};
+        var jsonString = JSON.stringify(foo, replacer); // {"week":45,"month":7}.
+        */
+        
 
 }();
