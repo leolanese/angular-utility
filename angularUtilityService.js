@@ -444,8 +444,8 @@
         */
         
         // Remove a JSON attribute
-        var deleteKeyJSON =  function(json, key){
-          delete myObj.test.key1;
+        var deleteKeyJSON =  function(myObj, keyToDelete){
+          delete myObj.test[keyToDelete];
         }
         /*
         var myObj = {'test' : {'key1' : 'value', 'key2': 'value'}};
