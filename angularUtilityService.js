@@ -453,5 +453,15 @@
         
         deleteKeyJSON(myObj, keyToDelete);
         */
+        
+        // check if one string contains another substring
+        var contain = function(s,o){
+          return s.indexOf(o) > -1;
+        }
+        /*
+        var s = "foo";
+        var o = "oo";
+        contain(s,o);
+        */
 
 }();
