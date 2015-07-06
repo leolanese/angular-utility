@@ -71,7 +71,8 @@
       replacer: replacer,
       deleteKeyJSON: deleteKeyJSON,
       contain: contain,
-      convertToNumber: convertToNumber
+      convertToNumber: convertToNumber,
+      isFunction: isFunction
   };
 
   ////////////
@@ -485,5 +486,16 @@
    // return the Service
    return utilityService;
   }
+  
+  var isFunction = fucntion(obj){
+		return typeof(obj) === "function";
+	}
+	/*
+	var f = function f() {};
+	isFunction(f); // true
+	*/
+	
+	
+	
 
 })();
