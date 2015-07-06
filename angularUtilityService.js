@@ -72,7 +72,8 @@
       deleteKeyJSON: deleteKeyJSON,
       contain: contain,
       convertToNumber: convertToNumber,
-      isFunction: isFunction
+      isFunction: isFunction,
+      isInArray: isInArray
   };
 
   ////////////
@@ -487,14 +488,24 @@
    return utilityService;
   }
   
-  var isFunction = fucntion(obj){
-		return typeof(obj) === "function";
-	}
-	/*
-	var f = function f() {};
-	isFunction(f); // true
-	*/
-	
+  
+  var isFunction = function(obj){
+    return typeof(obj) === "function";
+  }
+  /*
+  var f = function f() {};
+  isFunction(f); // true
+  */
+
+
+  var isInArray = function(value, array) {
+    return array.indexOf(value) > -1;
+  }
+  /*
+  var a = [1,2,3,4];
+  var v = 1;
+  isInArray(v, a); // true
+  */
 	
 	
 
