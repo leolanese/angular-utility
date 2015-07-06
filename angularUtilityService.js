@@ -49,6 +49,7 @@
       isUndefined : isUndefined,
       isElement : isElement,
       isJQuery : isJQuery,
+      isEmpty: isEmpty,
       debounce : debounce,
       stringify : stringify,
       clone : clone,
@@ -69,7 +70,8 @@
       toStr: toStr,
       replacer: replacer,
       deleteKeyJSON: deleteKeyJSON,
-      contain: contain
+      contain: contain,
+      convertToNumber: convertToNumber
   };
 
   ////////////
@@ -78,7 +80,7 @@
     var match = /(msie) ([\w.]+)/i.exec(navigator.userAgent);
     return match ? parseInt(match[2], 10) : false;
   }
-
+  
   function isBlankString(str) {
     return !str || /^\s*$/.test(str);
   }
@@ -190,6 +192,10 @@
   function toStr(s) {
     return isUndefined(s) || s === null ? "" : s + "";
   }
+  
+  function convertToNumber(value){
+    return parseInt(value, 10);
+  }
 
   function stringify(val) {
     return isString(val) ? val : JSON.stringify(val);
@@ -294,7 +300,7 @@
   }
   /*
    console.log( [12, 54, 18, 130, 44].every(isBigEnough) );
-   */
+  */
 
   // Remove duplicate items from an array
   function removeDuplicate(base) {
@@ -333,7 +339,7 @@
   /*
    var jsonObj = {"key1":"value1","key2":"value2"};
    getKeys(jsonObj);
-   */
+  */
 
 
   /*
@@ -379,7 +385,7 @@
    */
 
 
-  var isEmptyObject = function( obj ) {
+  var isEmpty = function( obj ) {
     var name;
     for ( name in obj ) {
       return false;
@@ -388,7 +394,7 @@
   };
   /*
    var n = new Array('1','2');
-   console.log(isEmptyObject(n));
+   console.log(isEmpty(n));
    */
 
 
