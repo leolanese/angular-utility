@@ -1,6 +1,6 @@
 ;(function () {
   angular
-    .module('ivmaApp')
+    .module('myApp')
     .filter('range', range);
 
   /* @ngInject */
