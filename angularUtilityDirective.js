@@ -2,7 +2,28 @@
   'use strict';
   
   myApp
+  
+     // Re-usable maxlength, note that we still can use use the native HTML5 maxlength="2" or AJS way ng-maxlength="2"
+    .directive('maxlength', function() {
+      return {
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModelCtrl) {
+          var maxlength = Number(attrs.maxlength);
+          function fromUser(text) {
+            if (text.length > maxlength) {
+              var transformedInput = text.substring(0, maxlength);
+              ngModelCtrl.$setViewValue(transformedInput);
+              ngModelCtrl.$render();
+              return transformedInput;
+            }
+            return text;
+          }
+          ngModelCtrl.$parsers.push(fromUser);
+        }
+      };
+    })   
 
+    // to upper case
     .directive('touppercase', function() {
       return {
         require: '?ngModel',
@@ -16,7 +37,7 @@
       };
     })
     
-    
+    // to lower case
     .directive('tolowercase', function() {
       return {
         require: '?ngModel',
