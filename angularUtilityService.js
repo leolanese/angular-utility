@@ -80,7 +80,16 @@
 
   ////////////
   
-  function toggle = function($scope) {
+  function makeArray(obj){
+    var a = jQuery.makeArray(obj); 
+    if (Array.isArray(a){
+    	return a;
+    } else {
+    	return false;
+    }
+  }
+  
+  function toggle($scope) {
     $scope.toggle = !$scope.toggle;
   }
 
