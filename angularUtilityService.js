@@ -15,6 +15,7 @@
     /*jshint validthis: true */
     var vm = this;
 
+    vm.toggle = toggle;
     vm.isMsie = isMsie;
     vm.isBlankString = isBlankString;
     vm.escapeRegExChars = escapeRegExChars;
@@ -41,6 +42,7 @@
 
     /* NOTE: I'm making all methods and properties public and private. Take those that we need and make the rest privates */
     var utilityService = {
+      toggle : toggle,
       isMsie : isMsie,
       isBlankString : isBlankString,
       escapeRegExChars : escapeRegExChars,
@@ -77,6 +79,10 @@
   };
 
   ////////////
+  
+  function toggle = function($scope) {
+    $scope.toggle = !$scope.toggle;
+  }
 
   function isMsie() {
     var match = /(msie) ([\w.]+)/i.exec(navigator.userAgent);
