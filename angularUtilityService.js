@@ -14,7 +14,9 @@
 
     /*jshint validthis: true */
     var vm = this;
-
+    
+    vm.betterTypeOf = betterTypeOf;
+    vm.makeArray = makeArray;
     vm.toggle = toggle;
     vm.isMsie = isMsie;
     vm.isBlankString = isBlankString;
@@ -42,6 +44,8 @@
 
     /* NOTE: I'm making all methods and properties public and private. Take those that we need and make the rest privates */
     var utilityService = {
+      betterTypeOf:betterTypeOf,	
+      makeArray: makeArray,
       toggle : toggle,
       isMsie : isMsie,
       isBlankString : isBlankString,
@@ -79,6 +83,25 @@
   };
 
   ////////////
+  
+  /*
+	betterTypeOf(null); // null
+	betterTypeOf(NaN); // number
+	betterTypeOf({a: 4}); //"object"
+	betterTypeOf([1, 2, 3]); //"array"
+	(function() {console.log(toType(arguments))})(); //arguments
+	betterTypeOf(new ReferenceError); //"error"
+	betterTypeOf(new Date); //"date"
+	betterTypeOf(/a-z/); //"regexp"
+	betterTypeOf(Math); //"math"
+	betterTypeOf(JSON); //"json"
+	betterTypeOf(new Number(4)); //"number"
+	betterTypeOf(new String("abc")); //"string"
+	betterTypeOf(new Boolean(true)); //"boolean"
+  */
+  function betterTypeOf(obj) {
+    return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+  }
   
   function makeArray(obj){
     var a = jQuery.makeArray(obj); 
