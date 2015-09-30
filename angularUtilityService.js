@@ -14,7 +14,10 @@
 
     /*jshint validthis: true */
     var vm = this;
-    
+    vm.isObject = isObject,
+    vm.isInteger = isInteger,
+    vm.isFloat = isFloat,
+    vm.isBoolean = isBoolean,
     vm.betterTypeOf = betterTypeOf;
     vm.makeArray = makeArray;
     vm.toggle = toggle;
@@ -44,6 +47,9 @@
 
     /* NOTE: I'm making all methods and properties public and private. Take those that we need and make the rest privates */
     var utilityService = {
+      isObject:isObject,
+      isInteger:isInteger,
+      isFloat:isFloat,
       betterTypeOf:betterTypeOf,	
       makeArray: makeArray,
       toggle : toggle,
@@ -99,9 +105,26 @@
 	betterTypeOf(new String("abc")); //"string"
 	betterTypeOf(new Boolean(true)); //"boolean"
   */
+    
   function betterTypeOf(obj) {
     return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
   }
+  
+  function isObject(value) {
+    return Object.prototype.toString.call(value) === '[object Object]';
+  }
+  
+  function isFloat(value) {
+    return typeof value === "number" && value === +value && Math.round(value) !== value;
+  }
+  
+  function isInteger(value) {
+    return typeof value === "number" && value === +value && Math.round(value) === value;
+  }
+  
+  function isBoolean(value) {
+    return typeof value === 'boolean' || value === 'true' || value === 'false';
+  },
   
   function makeArray(obj){
     var a = jQuery.makeArray(obj); 
