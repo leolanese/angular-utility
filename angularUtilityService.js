@@ -50,6 +50,8 @@
       isObject:isObject,
       isInteger:isInteger,
       isFloat:isFloat,
+      shuffleArray:shuffleArray, 
+      emptyArray:emptyArray,
       betterTypeOf:betterTypeOf,	
       makeArray: makeArray,
       toggle : toggle,
@@ -106,13 +108,32 @@
 	betterTypeOf(new Boolean(true)); //"boolean"
   */
   
+  function shuffleArray(arr) {
+    var i,
+        j,
+        temp;
+    for (i = arr.length-1; i>0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr;    
+  };
+  /*
+   var a = [1, 2, 3, 4, 5, 6, 7, 8];
+   var b = shuffleArray(a);
+   console.log(b);
+   // [2, 7, 8, 6, 5, 3, 1, 4]
+  */
+  
   function emptyArray() {
     var n = list.length = 0;
     console.log(n)
   }
   /*
-  var list = [1, 2, 3, 4];
-  emptyArray();
+   var list = [1, 2, 3, 4];
+   emptyArray();
   */
     
   function betterTypeOf(obj) {
