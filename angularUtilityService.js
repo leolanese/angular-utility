@@ -50,6 +50,7 @@
       isObject:isObject,
       isInteger:isInteger,
       isFloat:isFloat,
+      printUpperCase:printUpperCase,
       shuffleArray:shuffleArray, 
       emptyArray:emptyArray,
       betterTypeOf:betterTypeOf,	
@@ -107,6 +108,13 @@
 	betterTypeOf(new String("abc")); //"string"
 	betterTypeOf(new Boolean(true)); //"boolean"
   */
+  
+  function printUpperCase(words) {
+  var elements = [].concat(words);
+    for (var i = 0; i < elements.length; i++) {
+      console.log(elements[i].toUpperCase());
+    }
+  }
   
   function shuffleArray(arr) {
     var i,
