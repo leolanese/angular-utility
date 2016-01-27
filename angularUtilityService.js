@@ -105,6 +105,15 @@
 	betterTypeOf(new String("abc")); //"string"
 	betterTypeOf(new Boolean(true)); //"boolean"
   */
+  
+  function emptyArray() {
+    var n = list.length = 0;
+    console.log(n)
+  }
+  /*
+  var list = [1, 2, 3, 4];
+  emptyArray();
+  */
     
   function betterTypeOf(obj) {
     return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
