@@ -115,6 +115,9 @@
       console.log(elements[i].toUpperCase());
     }
   }
+  /*
+  printUpperCase(["l", "e", "o"]);
+  */
   
   function shuffleArray(arr) {
     var i,
