@@ -1,11 +1,10 @@
-(function(){
+;(function(){
   'use strict';
 
   angular
 
-    .module('myApp')
-
-    .factory('angularUtilityService', angularUtilityService);
+  .module('myApp')
+  .factory('angularUtilityService', angularUtilityService);
 
   /* @ngInject */
   function angularUtilityService($location, $scope){
@@ -15,6 +14,7 @@
     /*jshint validthis: true */
     var vm = this;
     vm.isObject = isObject,
+    vm.isObject2 = isObject2,
     vm.isInteger = isInteger,
     vm.isFloat = isFloat,
     vm.isBoolean = isBoolean,
@@ -48,6 +48,7 @@
     /* NOTE: I'm making all methods and properties public and private. Take those that we need and make the rest privates */
     var utilityService = {
       isObject:isObject,
+      isObject2:isObject2,
       isInteger:isInteger,
       isFloat:isFloat,
       printUpperCase:printUpperCase,
@@ -91,7 +92,7 @@
       isInArray: isInArray
   };
 
-  ////////////
+  ////
   
   /*
 	betterTypeOf(null); // null
@@ -153,6 +154,10 @@
   
   function isObject(value) {
     return Object.prototype.toString.call(value) === '[object Object]';
+  }
+  
+  function isObject2(a) {
+    return Object(a)=== a;
   }
   
   function isFloat(value) {
