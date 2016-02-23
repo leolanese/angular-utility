@@ -170,11 +170,11 @@
   
   function isBoolean(value) {
     return typeof value === 'boolean' || value === 'true' || value === 'false';
-  },
+  }
   
   function makeArray(obj){
     var a = jQuery.makeArray(obj); 
-    if (Array.isArray(a){
+    if (Array.isArray(a)){
     	return a;
     } else {
     	return false;
