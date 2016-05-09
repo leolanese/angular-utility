@@ -15,6 +15,7 @@
     var vm = this;
     vm.isObject = isObject,
     vm.isObject2 = isObject2,
+    vm.displayObject = displayObject,
     vm.isInteger = isInteger,
     vm.isFloat = isFloat,
     vm.isBoolean = isBoolean,
@@ -49,6 +50,7 @@
     var utilityService = {
       isObject:isObject,
       isObject2:isObject2,
+      displayObject:displayObject,
       isInteger:isInteger,
       isFloat:isFloat,
       printUpperCase:printUpperCase,
@@ -118,6 +120,22 @@
   }
   /*
   printUpperCase(["l", "e", "o"]);
+  */
+  
+  function displayObject(obj){
+	for(var i in obj) {
+    		if (obj.hasOwnProperty(i)) {
+        		console.log(i, '' + obj[i]);
+    		}
+	}
+  }
+  /*
+  var obj = {
+    bar: 1,
+    foo: 2,
+    baz: 3
+  };
+  displayObject(obj);
   */
   
   function shuffleArray(arr) {
