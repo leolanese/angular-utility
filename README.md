@@ -15,9 +15,6 @@ A collection of AngularJS services that helps me, and I hope these can help you 
 # My LAB<br>
 <a href="http://www.rwdlab.com" target="_blank">http://www.rwdlab.com</a><br>
 
-# My Activities:<br>
-<a href="http://www.beresponsive.co.uk" target="_blank">www.beresponsive.co.uk</a><br>
-
 # My Blog:<br>
 <a href="http://www.leolanese.com/blog" target="_blank">www.leolanese.com/blog</a><br>
 
