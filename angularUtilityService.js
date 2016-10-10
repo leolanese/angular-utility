@@ -12,13 +12,13 @@
 
     /*jshint validthis: true */
     var vm = this;
-    vm.isObject = isObject,
-    vm.isObject2 = isObject2,
-    vm.displayObject = displayObject,
-    vm.isInteger = isInteger,
-    vm.isFloat = isFloat,
-    vm.isBoolean = isBoolean,
-    vm.betterTypeOf = betterTypeOf,
+    vm.isObject = isObject;
+    vm.isObject2 = isObject2;
+    vm.displayObject = displayObject;
+    vm.isInteger = isInteger;
+    vm.isFloat = isFloat;
+    vm.isBoolean = isBoolean;
+    vm.betterTypeOf = betterTypeOf;
     vm.makeArray = makeArray;
     vm.toggle = toggle;
     vm.isMsie = isMsie;
