@@ -18,7 +18,7 @@
     vm.isInteger = isInteger,
     vm.isFloat = isFloat,
     vm.isBoolean = isBoolean,
-    vm.betterTypeOf = betterTypeOf;
+    vm.betterTypeOf = betterTypeOf,
     vm.makeArray = makeArray;
     vm.toggle = toggle;
     vm.isMsie = isMsie;
