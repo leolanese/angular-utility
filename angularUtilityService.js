@@ -2,7 +2,6 @@
   'use strict';
 
   angular
-
   .module('myApp')
   .factory('angularUtilityService', angularUtilityService);
 
@@ -71,7 +70,6 @@
       debounce : debounce,
       stringify : stringify,
       clone : clone,
-      toggle : toggle,
       redirection : redirection,
       valuesToArray : valuesToArray,
       countJSONObjects : countJSONObjects,
