@@ -8,7 +8,6 @@ A collection of AngularJS services that helps me, and I hope these can help you 
 ### 'I  B u i l d   I n s p i r i n g   R e s p o n s i v e   S o l u t i o n s',
 ### 'L O N D O N ,  U K' }
 
-
 # My Portfolio<br>
 <a href="http://www.leolanese.com" target="_blank">http://www.leolanese.com</a><br>
 
